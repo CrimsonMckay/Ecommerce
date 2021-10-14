@@ -6,8 +6,8 @@ def home(request):
     return render(request,'home.html')
 
 
-def aboutPage(request):
-    return render(request,'about.html')
+def productPage(request):
+    return render(request,'product.html')
 
 # Create your views here.
  

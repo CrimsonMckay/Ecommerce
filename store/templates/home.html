@@ -6,47 +6,20 @@
 
 {% block content %}
 
+<section>
+<div class="Container-Default">
 
-<div class="py-4"> 
-<div class="container">
-<div class="row">
-<div class="col-10 mx-auto text-center">
-<h1 class="text-capitalize font-weight-bold">
-All Products
+<div class="Container-Inner-590px">
+<div class="text-center">
 
-</h1>
-</div>
-</div>
-</div>
-</div>
-
-<div class="container">
-<div class="row">
-{% for i in '12345678' %}
-<div class="col-9 mx-auto col-md-6 col-lg-3">
-<div class="card mb-5">
-<div class="p-4">
-<img src="{% static 'img/product-1.png'  class="card-img-top" %}" alt="">
-</div>
-
-
-<div class="card-footer d-flex justify-content-between" style="border-color:transparent">
-<p class="font-weight-bold mb-0">
-Galaxy s10
-
-</p>
-<h5 class="text-info font-italic mb-0">
-
-<span class="mr-1">$</span>500 
-</h5>
-
-
+<h1>Most Popular Items</h1>
+<img src="{% static 'img/sale.png' %}" alt="">
 </div>
 
 </div>
 
-
 </div>
-{% endfor %}
+</section>
+
 </div>
 {% endblock %}
