@@ -13,13 +13,39 @@
 <div class="text-center">
 
 <h1>Most Popular Items</h1>
-<img src="{% static 'img/sale.png' %}" alt="">
+<img src="{% static 'img/sale.png' %}" alt="" class="sale-icon">
 </div>
 
 </div>
 
+<div class="container">
+<div class="row">
+{% for product in products %}
+<div class="col-9 mx-auto col-md-6 col-lg-3">
+<div class="card mb-5 " style="border-color:transparent">
+<div class="p-4 ">
+<img src="{{product.image.url}}" class="card-img-top product-card" alt="{{product.name}}">
+</div>
+
+<div class="card-footer d-flex justify-content-between" style="background: transparents;border-color:transparent;">
+<p class="font-weight-bold mb-0">
+{{product.price}}
+
+</p>
+<h5 class="text-info font-italic mb-0">
+
+<span class="mr-1">$</span>{{product.price}}
+</h5>
+
+
+</div>
+
+</div>
+
+
+</div>
+{% endfor %}
 </div>
 </section>
 
-</div>
 {% endblock %}
