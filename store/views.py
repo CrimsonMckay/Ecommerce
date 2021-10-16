@@ -2,7 +2,7 @@ from django.db.models.fields import SlugField
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 
-from store.models import Category, Product
+from .models import Category, Product
 
 
 def home(request, category_slug=None):
