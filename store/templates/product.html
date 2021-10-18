@@ -1,7 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
     Product
  {% endblock %}
 {% block content %}
 
-{% endblock %}
+<section class="top">
+<div class="Container-Default">
+<div class="grid-2-columns product-top">
+<div>
+<a href="#" style="
+    max-width: 100%;
+    display: inline-block;
+">
+<div  class="image-wrapper border-radius-6px">
+<img src="{{product.image.url}}" class="product-image">
+</div>
+</a>
+
+
+</div>
+<div>
+<h1 class="Heading-H2-Size">{{product.name}}</h1>
+<p style="margin-bottom:20px;">{{product.description}}</p>
+
+<div class="flex">
+<div class="product-price">
+${{product.price}} USD
+</div>
+</div>
+<div class="empty-state">
+{% if product.stock <= 0 %}
+<div>This product is out of stock.</div>
+{% else %}
+<div>Add to Cart</div>
+{% endif %}
+</div>
+</div>
+</div>
+</section>
+{% endblock %} 

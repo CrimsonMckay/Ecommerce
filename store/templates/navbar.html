@@ -1,7 +1,12 @@
+{% load static %}
 <nav class="Navbar1" class="Active Nav1" >
 
  <div class="Nav1Wrap">
-
+<a href="#" class="Brand"><img src="/static/img/logoy.png" class="logo" alt="" style="
+    max-width: 122%;
+    height: auto;
+    width: 100px;
+"></a>
 <div class="Nav1MenuWrap">
 <div class="Nav1Menu">
 <a href="#" class="NavLink">home</a>
@@ -10,7 +15,7 @@
 <a class="dropdown-item" href="{% url 'home' %}">All Products</a>
 {% for category in links %}
 <a class="dropdown-item" href="{{category.get_url}}">{{category.name}}</a>
-{% endfor %}
+{% endfor %}    
 </div>
    <a href="#" class="NavLink">contact</a>
  <a href="#" class="NavLink">about</a>
