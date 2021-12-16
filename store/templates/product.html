@@ -5,38 +5,58 @@
  {% endblock %}
 {% block content %}
 
-<section class="top">
-<div class="Container-Default">
-<div class="grid-2-columns product-top">
+
+
+  <section class="section">
+    {% include 'gray_stripes.html' %}
+    <div class="product-container">
+      <div class="product-page-grid">
+
+        <div>
+          <div class="margin-30px">
+            <div class="team-animation">
+              <img src="{{product.image.url}}" class="card-img-top product-card" alt="{{product.name}}">
+            </div>
+          </div>
+        </div>
+
+        <div class="sticky-product">
+          <div class="product-content">
+            <h3 class="product-Title main">{{product.name}}</h3>
+
+            <div class="Margin-20px">
+              <p class="subhead">{{product.description}}</p>
+            </div>
+            <div class="margin-30px">
+              <div class="price-flex">
+        <div class="Price-Pop"><span class="mr-1">₵</span>{{product.price}}</div>
+
+          </div>
+        </div>
+
+<div class="margin-25px">
+  {% if product.stock <= 0 %}
+<div class="out_of_stock">
+  <div>This product is out of stock</div>
+</div>
+  {% else %}
+  <input type="submit" class="Button primary" value="Add to Cart"/>
+  {% endif %}
+</div>
+
+<div class="line-divider">
+    
+</div>
 <div>
-<a href="#" style="
-    max-width: 100%;
-    display: inline-block;
-">
-<div  class="image-wrapper border-radius-6px">
-<img src="{{product.image.url}}" class="product-image">
+  <div class="Button">
+    <div>Back To Shop</div>
+    <img class="arrow-button" src="{% static 'img/arrowE.svg' %}" alt=""/>
 </div>
-</a>
+</div>
 
 
-</div>
-<div>
-<h1 class="Heading-H2-Size">{{product.name}}</h1>
-<p style="margin-bottom:20px;">{{product.description}}</p>
+      </div>
+    </div>
+  </section>
 
-<div class="flex">
-<div class="product-price">
-${{product.price}} USD
-</div>
-</div>
-<div class="empty-state">
-{% if product.stock <= 0 %}
-<div>This product is out of stock.</div>
-{% else %}
-<div>Add to Cart</div>
-{% endif %}
-</div>
-</div>
-</div>
-</section>
 {% endblock %} 

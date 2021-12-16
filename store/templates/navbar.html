@@ -1,8 +1,8 @@
 {% load static %}
-<nav class="Navbar1" class="Active Nav1" >
+{% comment %} <nav class="Navbar1" class="Active Nav1" >
 
  <div class="Nav1Wrap">
-<a href="#" class="Brand"><img src="/static/img/logoy.png" class="logo" alt="" style="
+<a href="#" class="Brand"><img src="" class="logo" alt="" style="
     max-width: 122%;
     height: auto;
     width: 100px;
@@ -23,22 +23,89 @@
  </div>
  </div>
  
- 
  </div>
 
-</nav>
+</nav> {% endcomment %}
 
-<div class="expansion">
 
-<div class="wrapper">
+<nav class="header">
+<div class="Container-Default">
+  <div class="header-wrapper">
+    <div class="split-content header-right">
+      <a href="#" class="Brand">
+        <img src="{% static 'img/logoX.svg' %}" alt="logo"/>
+      </a>
+      <div class="nav-menu left">
+        <ul class="header-navigation">
+          <li class="nav-item-wrapper">
+            <a href="" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item-wrapper">
+            <a href="" class="nav-link">Categories</a>
+          </li>
+          <li class="nav-item-wrapper">
+            <a href="" class="nav-link">All products</a>
+          </li>
+          <li class="nav-item-wrapper">
+            <a href="" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item-wrapper">
+            <a href="" class="nav-link">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-  <div class="searchBar">
-    <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search products" value="" />
-    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
-      <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
-      </svg>
-    </button>
+    <div class="split-content header-left">
+<form class="search-bar-container header-search">
+
+<input class="input search-input" placeholder="search for products" type="search">
+
+</form>
+
+<div class="cart-menu-wrapper">
+  <a href="#" class="cart-button">
+    <img src="{% static 'img/local_mall_black.svg' %}" alt="cart" class="cart-icon"/>
+  </a>
+  <div class="right-sidebar container-wrapper" style="opacity:1;transition:opacity 300ms 0s">
+
+    <div class="cart-container e-commerce-container">
+      <div class="cart-header e-commerce-cart-header">
+        <h4>Your Cart<h4>
+          <a href="#" class="cart-close-button e-commercecartcloselink w-inline-block">
+            <svg data-w-id="86d01ae5-f4f5-e0fe-d623-45a4fc1f5cf1" data-wf-id="[&quot;8d6e632e-5ffe-6a0f-d812-3a75b1e2d483&quot;,&quot;86d01ae5-f4f5-e0fe-d623-45a4fc1f5cf1&quot;]" width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg>
+          </a>
+      </div>
+    <div class="cart-form-wrapper">
+  <form class="cart-default-state">
+    <div class="cart-list">
+      <div class="cart-item">
+        <img src="/static/img/dinning-table.jpeg" alt="chair" style="
+        width: 60px;
+        height: 0%;
+    ">
+    <div class="text-detail-grapper">
+      <div class="cart-product-title">lisbo dinning-table</div>
+      <div class="cart-product-price"><span class="mr-1">₵</span>300</div>
+      <a href="#" class="remove-button w-inline-block">
+        <div>Remove</div>
+      </a>
+    </div>
+    <input type="text" required="" pattern="^[0-9]+$" inputmode="numeric" value="1" class="input cart-quantity"/>
+      </div>
+    </div>
+  </form>
+  </div>
+    </div>
+  
+
+</div>
+
+</div>
+<div class="menu-button"></div>
+    </div>
+
   </div>
 </div>
 
-</div>
+</nav>

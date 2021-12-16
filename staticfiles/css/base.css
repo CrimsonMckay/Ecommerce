@@ -1,0 +1,249 @@
+body {
+    background: #ffffff;
+}
+
+.Navbar1 {
+    width: 100%;
+    padding: 22px 36px;
+    grid-auto-columns: 1fr;
+    gap: 30px 36px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: white;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+    z-index: 100;
+    text-transform: uppercase
+}
+
+.section {
+    padding-bottom: 140px;
+}
+
+.section.top {
+    padding-top: 56px;
+    padding-bottom: 140px;
+}
+
+.Nav1Wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    grid-auto-columns: 1fr;
+    gap: 0px 36px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.Nav1MenuWrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 0%;
+}
+
+.NavLink {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0px;
+    font-size: 11px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color: #222222;
+    padding: 20px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: stretch;
+    padding-left: 0px;
+    position: relative;
+    float: left;
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+}
+
+.logo {
+    max-width: 122%;
+    width: 100px;
+    height: auto;
+}
+
+.wrapper.m0-100 {
+    padding-top: 0px;
+    padding-bottom: 100px;
+}
+
+.store-elements {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80%;
+    padding: 10px 0px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    background-color: transparent;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 31.25rem;
+    margin: 6rem auto;
+}
+
+.sale-icon {
+    width: 42px;
+    margin-left: 25px;
+}
+
+h1 {
+    color: #000;
+    font-size: 40px;
+    line-height: 1.5em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.searchBar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#searchQueryInput {
+    width: 100%;
+    height: 2.8rem;
+    background: #f4f4f5;
+    outline: none;
+    border: none;
+    border-radius: 1.625rem;
+    padding: 0 3.5rem 0 1.5rem;
+    font-size: 1rem;
+}
+
+#searchQuerySubmit {
+    width: 3.5rem;
+    height: 2.8rem;
+    margin-left: -3.5rem;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+#searchQuerySubmit:hover {
+    cursor: pointer;
+}
+
+.section {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.Container-Default {
+    max-width: 1172px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
+.Container-Inner-590px {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 590px;
+}
+
+.text-center {
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+}
+
+.expansion {
+    background-color: #ffffff;
+    padding: 14px;
+    margin-bottom: 20px;
+}
+
+.grid-2-columns {
+    display: grid;
+    grid-auto-columns: 1fr;
+    gap: 28;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: baseline;
+}
+
+.grid-2-columns.product-top {
+    align-items: center;
+    column-gap: 88px;
+    grid-template-columns: 1.1fr 1fr;
+}
+
+.image-wrapper {
+    overflow: hidden;
+    transform: translate(0px, 0px);
+}
+
+.image-wrapper.border-radius-6px {
+    border-radius: 6px;
+}
+
+.product-image {
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+}
+
+.Heading-H2-Size {
+    color: #0a0a0a;
+    font-size: 32px;
+    line-height: 46px;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 12px;
+    color: #0a0a0a;
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+.flex {
+    display: flex;
+}
+
+.product-price {
+    margin-top: 4px;
+    margin-right: 12px;
+    margin-bottom: 4px;
+    color: rgb(10, 10, 10);
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+.empty-state {
+    padding: 26px;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+}

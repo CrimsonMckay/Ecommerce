@@ -6,10 +6,9 @@
 
 {% block content %}
 
-<section>
-<div class="Container-Default">
 
-<div class="Container-Inner-590px">
+
+{% comment %} <div class="Container-Inner-590px">
 <div class="text-center">
 
 <h1>Most Popular Items</h1>
@@ -18,18 +17,18 @@
 
 </div>
 
-<div class="container">
+<div class="container-fluid">
 <div class="row">
 {% for product in products %}
 <div class="col-9 mx-auto col-md-6 col-lg-3">
 <div class="card mb-5 " style="border-color:transparent">
-<div class="p-4 ">
+<div class="p-4">
 <a href="{{product.get_url}}">
 <img src="{{product.image.url}}" class="card-img-top product-card" alt="{{product.name}}">
 </a>
 </div>
 
-<div class="card-footer d-flex justify-content-between" style="background: transparents;border-color:transparent;">
+<div class="card-footer d-flex justify-content-between" style="background: transparent;border-color:transparent;">
 <p class="font-weight-bold mb-0">
 {{product.name}}
 
@@ -46,8 +45,53 @@
 
 
 </div>
-{% endfor %}
-</div>
-</section>
+{% endfor %} {% endcomment %}
 
+
+<body>
+    <section class="section">
+     {% include 'gray_stripes.html' %}
+
+<div class="product-container">
+    
+    <div class="grid-container">
+        {% for product in products %}
+        <div class="collection-item">
+            <div class="shop-Animation">
+                <a href="{{product.get_url}}">
+                    <img src="{{product.image.url}}" class="card-img-top product-card" alt="{{product.name}}">
+                    </a>
+            </div>
+            <div class="Product-Content">
+
+                <h3 class="product-Title">{{product.name}}</h3>
+
+  <div class="Margin-15px">
+          <div class="price-flex">
+    <div class="Price-Pop"><span class="mr-1">₵</span>{{product.price}}</div>
+    </div>
+
+      </div>
+      <div class="Margin-20px">
+<div class="Button">
+    <div>Add to Cart</div>
+    <img class="arrow-button" src="{% static 'img/arrowE.svg' %}" alt=""/>
+</div>
+      </div>
+
+            </div>
+            
+        </div>
+        {% endfor %}
+
+
+
+        </div>
+
+</div>
+
+    </section>
+</body>
+  
+ 
 {% endblock %}
