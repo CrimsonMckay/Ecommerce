@@ -52,9 +52,23 @@ class Cart(models.Model):
         ordering = ['date_added']
 
     def __str__(self):
-        return self.name        
+        return self.cart_id        
+
+
+class CartItem(model.Model):
+    product = models.ForeignKey(Product, on_delete)
+    cart = models.ForeignKey(Cart, on_delete)
+    quantity = models.IntegerField()
+    active = models.BooleanField(defaut=True)                               
     
-    
-    
+    class Meta:
+        db_table = 'CartItem'
         
+        
+    def SubTotal(self):
+        return self.product.price * self.quantity    
+    
+    def __str__(self):
+        return self.product  
+       
     
