@@ -1,10 +1,10 @@
 from django.db import models
 from django.urls import reverse
 
-
+# Category model with model fields
 class Category(models.Model):
     name = models.CharField(max_length=250,unique=True)
-    slug=models.SlugField(max_length=250,unique=True)
+    slug=models.SlugField(max_length=250,unique=True) #slug is part of a url that identifies a particular page in a website in a form readeable to users
     description=models.TextField(blank=True)
     image=models.ImageField(upload_to='category',blank=True)
     
@@ -15,11 +15,11 @@ class Category(models.Model):
         
     def get_url(self):
         return reverse('products_by_category',args=[self.slug])    
-    
+    #whenever we call or display an instance of category model it will display the category name
     def __str__(self):
         return self.name
     
-    
+    #Product Model 
 class Product(models.Model):
     name = models.CharField(max_length=250,unique=True)
     slug=models.SlugField(max_length=250,unique=True)
@@ -55,11 +55,11 @@ class Cart(models.Model):
         return self.cart_id        
 
 
-class CartItem(model.Model):
-    product = models.ForeignKey(Product, on_delete)
-    cart = models.ForeignKey(Cart, on_delete)
+class CartItem(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     quantity = models.IntegerField()
-    active = models.BooleanField(defaut=True)                               
+    active = models.BooleanField(default=True)                               
     
     class Meta:
         db_table = 'CartItem'
