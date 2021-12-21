@@ -40,7 +40,9 @@
   <div>This product is out of stock</div>
 </div>
   {% else %}
+ <a href="{% url 'add_cart' product.id %}"> 
   <input type="submit" class="Button primary" value="Add to Cart"/>
+ </a>
   {% endif %}
 </div>
 

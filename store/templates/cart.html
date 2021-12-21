@@ -17,22 +17,32 @@ cart
           </a>
       </div>
     <div class="cart-form-wrapper">
+        {% if not cart_items %}
+<div class="empty-state">
+<div class="empty-state-title">No items found</div>
+<a href="#" class="button-primary" onclick="sayHello()" >Browse products</a>
+</div>
+
+        {% else %}
+      
   <form class="cart-default-state">
     <div class="cart-list">
-   {% for i in '1234'  %}
+   {% for cart_item in cart_items  %}
    
    <div class="cart-item">
-    <img src="/static/img/dinning-table.jpeg" alt="chair" style="
+<a href="cart_items.product.get_url">
+    <img src="'{{cart_item.product.image.url}}" style="
     width: 60px;
     height: 0%;
 ">
+</a>
 <div class="text-detail-grapper">
-  <div class="cart-product-title">lisbo dinning-table</div>
-  <div class="cart-product-price"><span class="mr-1">₵</span>300</div>
+  <div class="cart-product-title">{{cart_item.product.name}}</div>
+  <div class="cart-product-price"><span class="mr-1">₵</span>{{cart_item.sub_total}}</div>
   <div class="option">
 <div class="option-list">
     <div class="sku">SKU<span>:</span>
-    <div class="unit" style="display:inline">8</div>
+    <div class="unit" style="display:inline">{{cart_item.product.id}}</div>
     </div>
 </div>
 
@@ -41,7 +51,11 @@ cart
     <div>Remove</div>
   </a>
 </div>
-<input type="text" required="" pattern="^[0-9]+$" inputmode="numeric" value="1" class="input cart-quantity"/>
+{% if cart_item.quantity < cart_item.product.stock %}
+<input type="text" required="" pattern="^[0-9]+$" inputmode="numeric" value="{{cart_item.product.quantity}}" class="input cart-quantity"/>
+{% else %}
+<input type="text" required="" pattern="^[0-9]+$" maxlength="{{cart_item.product.stock}}" inputmode="numeric" value="{{cart_item.product.quantity}}" class="input cart-quantity"/>
+{% endif %}
   </div>
    {% endfor %}
    
@@ -49,15 +63,16 @@ cart
     <div class="cart-footer w-commerce-commercecartfooter">
         <div class="cart-line-item">
             <div>Subtotal</div>
-            <div class="cart-Subtotal"><span class="mr-1">₵</span>11,300</div>
+            <div class="cart-Subtotal"><span class="mr-1">₵</span>{{total}}</div>
         </div>
-        <div class="cart-actions">
-            <a href="#" class="button-primary">
+
+            <a href="{% url 'home' %}" class="button-primary">
 Continue Checkout
             </a>
-        </div>
+   
     </div>
   </form>
+  {% endif %}
   </div>
     </div>
   

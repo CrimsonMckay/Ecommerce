@@ -1,5 +1,5 @@
 from django.db.models.fields import SlugField
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render , redirect
 from django.http import HttpResponse
 
 from .models import Category, Product , Cart , CartItem
@@ -44,7 +44,7 @@ def add_cart(request,product_id):
         )
         cart.save()
     try:
-        cart_item = CartItem.objects.get(product=product_id, cart=cart)
+        cart_item = CartItem.objects.get(product=product, cart=cart)
         cart_item.quantity += 1
         cart_item.save()
     except:
@@ -56,5 +56,19 @@ def add_cart(request,product_id):
         cart_item.save()
         
     return redirect('cart_detail')    
+
+def cart_detail(request, total=0 , counter=0 , cart_items = None):
+    try:
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+        cart_items = Cart.objects.filter(cart=cart , active =True)
+        for cart_item in cart_items:
+            total += (cart_item.product.price * cart_item.quantity)
+            counter += cart_item.quantity
+    except ObjectDoesNotExist:
+        pass
+    
+    return render(request, 'cart.html' , dict(cart_items = cart_items , total = total , counter =counter))           
+    
+    
 # Create your views here.
  
