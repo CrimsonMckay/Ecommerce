@@ -16,10 +16,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'js/base_script.js' %}"></script>
     <title>{% block title %} {% endblock %}</title>
   </head>
-  <body>
+  <body class="preload">
 {% comment %} <header>
 <a href="{% url 'home' %}">Home</a> |
 <a href="{% url 'about' %}">About</a><i class="fad fa-bags-shopping"></i>

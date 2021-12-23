@@ -6,76 +6,77 @@ cart
 
 {% block content %}
 
-
+<nav class="nav">   
 <div class="right-sidebar container-wrapper" style="opacity:1;transition:opacity 300ms 0s">
 
-    <div class="cart-container e-commerce-container">
-      <div class="cart-header e-commerce-cart-header">
-        <h4>Your Cart<h4>
-          <a href="#" class="cart-close-button e-commercecartcloselink w-inline-block">
-            <svg data-w-id="86d01ae5-f4f5-e0fe-d623-45a4fc1f5cf1" data-wf-id="[&quot;8d6e632e-5ffe-6a0f-d812-3a75b1e2d483&quot;,&quot;86d01ae5-f4f5-e0fe-d623-45a4fc1f5cf1&quot;]" width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg>
-          </a>
-      </div>
-    <div class="cart-form-wrapper">
-        {% if not cart_items %}
+  <div class="cart-container e-commerce-container">
+    <div class="cart-header e-commerce-cart-header">
+      <h4>Your Cart<h4>
+        <a href="#" class="cart-close-button e-commercecartcloselink w-inline-block">
+          <svg  width="16px" height="16px" viewBox="0 0 16 16"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#333333"><polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon></g></g></svg>
+        </a>
+    </div>
+  <div class="cart-form-wrapper">
+      {% if not cart_items %}
 <div class="empty-state">
 <div class="empty-state-title">No items found</div>
-<a href="#" class="button-primary" onclick="sayHello()" >Browse products</a>
+<a href="#" class="button-primary" >Browse products</a>
 </div>
 
-        {% else %}
-      
-  <form class="cart-default-state">
-    <div class="cart-list">
-   {% for cart_item in cart_items  %}
-   
-   <div class="cart-item">
+      {% else %}
+    
+<form class="cart-default-state">
+  <div class="cart-list">
+ {% for cart_item in cart_items  %}
+ 
+ <div class="cart-item">
 <a href="cart_items.product.get_url">
-    <img src="'{{cart_item.product.image.url}}" style="
-    width: 60px;
-    height: 0%;
+  <img src="'{{cart_item.product.image.url}}" style="
+  width: 60px;
+  height: 0%;
 ">
 </a>
 <div class="text-detail-grapper">
-  <div class="cart-product-title">{{cart_item.product.name}}</div>
-  <div class="cart-product-price"><span class="mr-1">₵</span>{{cart_item.sub_total}}</div>
-  <div class="option">
+<div class="cart-product-title">{{cart_item.product.name}}</div>
+<div class="cart-product-price"><span class="mr-1">₵</span>{{cart_item.sub_total}}</div>
+<div class="option">
 <div class="option-list">
-    <div class="sku">SKU<span>:</span>
-    <div class="unit" style="display:inline">{{cart_item.product.id}}</div>
-    </div>
+  <div class="sku">SKU<span>:</span>
+  <div class="unit" style="display:inline">{{cart_item.product.id}}</div>
+  </div>
 </div>
 
-  </div>
-  <a href="#" class="remove-button w-inline-block">
-    <div>Remove</div>
-  </a>
+</div>
+<a href="#" class="remove-button w-inline-block">
+  <div>Remove</div>
+</a>
 </div>
 {% if cart_item.quantity < cart_item.product.stock %}
 <input type="text" required="" pattern="^[0-9]+$" inputmode="numeric" value="{{cart_item.product.quantity}}" class="input cart-quantity"/>
 {% else %}
 <input type="text" required="" pattern="^[0-9]+$" maxlength="{{cart_item.product.stock}}" inputmode="numeric" value="{{cart_item.product.quantity}}" class="input cart-quantity"/>
 {% endif %}
+</div>
+ {% endfor %}
+ 
   </div>
-   {% endfor %}
-   
-    </div>
-    <div class="cart-footer w-commerce-commercecartfooter">
-        <div class="cart-line-item">
-            <div>Subtotal</div>
-            <div class="cart-Subtotal"><span class="mr-1">₵</span>{{total}}</div>
-        </div>
+  <div class="cart-footer w-commerce-commercecartfooter">
+      <div class="cart-line-item">
+          <div>Subtotal</div>
+          <div class="cart-Subtotal"><span class="mr-1">₵</span>{{total}}</div>
+      </div>
 
-            <a href="{% url 'home' %}" class="button-primary">
+          <a href="{% url 'home' %}" class="button-primary">
 Continue Checkout
-            </a>
-   
-    </div>
-  </form>
-  {% endif %}
+          </a>
+ 
   </div>
-    </div>
-  
+</form>
+{% endif %}
+</div>
+  </div>
+
 
 </div>
+</nav>
 {% endblock  %}
