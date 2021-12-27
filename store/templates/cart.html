@@ -1,13 +1,13 @@
 {% load static %}
 
 {% block title %}
-cart
+
 {% endblock %}
 
 {% block content %}
 
 <nav class="nav">   
-<div class="right-sidebar container-wrapper" style="opacity:1;transition:opacity 300ms 0s">
+<div class="right-sidebar container-wrapper" >
 
   <div class="cart-container e-commerce-container">
     <div class="cart-header e-commerce-cart-header">
@@ -17,7 +17,7 @@ cart
         </a>
     </div>
   <div class="cart-form-wrapper">
-      {% if not cart_items %}
+      {% if not cart_links %}
 <div class="empty-state">
 <div class="empty-state-title">No items found</div>
 <a href="#" class="button-primary" >Browse products</a>
@@ -27,13 +27,13 @@ cart
     
 <form class="cart-default-state">
   <div class="cart-list">
- {% for cart_item in cart_items  %}
+ {% for cart_item in cart_links%}
  
  <div class="cart-item">
-<a href="cart_items.product.get_url">
-  <img src="'{{cart_item.product.image.url}}" style="
+<a href="cart_item.product.get_url">
+  <img src="{{cart_item.product.image.url}}" style="
   width: 60px;
-  height: 0%;
+  height: 0%%;
 ">
 </a>
 <div class="text-detail-grapper">

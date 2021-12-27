@@ -1,32 +1,4 @@
 {% load static %}
-{% comment %} <nav class="Navbar1" class="Active Nav1" >
-
- <div class="Nav1Wrap">
-<a href="#" class="Brand"><img src="" class="logo" alt="" style="
-    max-width: 122%;
-    height: auto;
-    width: 100px;
-"></a>
-<div class="Nav1MenuWrap">
-<div class="Nav1Menu">
-<a href="#" class="NavLink">home</a>
-<a href="#" data-toggle="dropdown"  class="NavLink dropdown-toggle">Categories</a>
-<div class="dropdown-menu">
-<a class="dropdown-item" href="{% url 'home' %}">All Products</a>
-{% for category in links %}
-<a class="dropdown-item" href="{{category.get_url}}">{{category.name}}</a>
-{% endfor %}    
-</div>
-   <a href="#" class="NavLink">contact</a>
- <a href="#" class="NavLink">about</a>
- 
- </div>
- </div>
- 
- </div>
-
-</nav> {% endcomment %}
-
 
 <nav class="header">
 <div class="Container-Default">
@@ -67,6 +39,8 @@
   <a href="#" class="cart-button" id="btnNav">
     <img src="{% static 'img/local_mall_black.svg' %}" alt="cart" class="cart-icon"/>
   </a>
+  
+
   {% include 'cart.html' %}
 
 
