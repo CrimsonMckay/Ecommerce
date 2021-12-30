@@ -1,54 +1,59 @@
 {% load static %}
 
 <nav class="header">
-<div class="Container-Default">
-  <div class="header-wrapper">
-    <div class="split-content header-right">
-      <a href="#" class="Brand">
-        <img src="{% static 'img/logoX.svg' %}" alt="logo"/>
-      </a>
-      <div class="nav-menu left">
-        <ul class="header-navigation">
-          <li class="nav-item-wrapper">
-            <a href="" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item-wrapper">
-            <a href="" class="nav-link">Categories</a>
-          </li>
-          <li class="nav-item-wrapper">
-            <a href="" class="nav-link">All products</a>
-          </li>
-          <li class="nav-item-wrapper">
-            <a href="" class="nav-link">Contact</a>
-          </li>
-          <li class="nav-item-wrapper">
-            <a href="" class="nav-link">About</a>
-          </li>
-        </ul>
+  <div class="Container-Default">
+    <div class="header-wrapper">
+      <div class="split-content header-right">
+        <a href="#" class="Brand">
+          <img
+            src="{% static 'img/logoX.svg' %}"
+            alt="logo"
+            style="max-width: 100%; width: 160px"
+          />
+        </a>
+        <div class="nav-menu left">
+          <ul class="header-navigation">
+            <li class="nav-item-wrapper">
+              <a href="" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item-wrapper">
+              <a href="" class="nav-link">Categories</a>
+            </li>
+            <li class="nav-item-wrapper">
+              <a href="" class="nav-link">All products</a>
+            </li>
+            <li class="nav-item-wrapper">
+              <a href="" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item-wrapper">
+              <a href="" class="nav-link">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="split-content header-left">
+        <form class="search-bar-container header-search">
+          <input
+            class="input search-input"
+            placeholder="search for products"
+            type="search"
+          />
+        </form>
+
+        <div class="cart-menu-wrapper">
+          <a href="#" class="cart-button" id="btnNav">
+            <img
+              src="{% static 'img/local_mall_black.svg' %}"
+              alt="cart"
+              class="cart-icon"
+            />
+          </a>
+
+          {% include 'cart.html' %}
+        </div>
+        <div class="menu-button"></div>
       </div>
     </div>
-
-    <div class="split-content header-left">
-<form class="search-bar-container header-search">
-
-<input class="input search-input" placeholder="search for products" type="search">
-
-</form>
-
-<div class="cart-menu-wrapper">
-  <a href="#" class="cart-button" id="btnNav">
-    <img src="{% static 'img/local_mall_black.svg' %}" alt="cart" class="cart-icon"/>
-  </a>
-  
-
-  {% include 'cart.html' %}
-
-
-</div>
-<div class="menu-button"></div>
-    </div>
-
   </div>
-</div>
-
 </nav>

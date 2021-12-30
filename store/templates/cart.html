@@ -38,11 +38,11 @@
 </a>
 <div class="text-detail-grapper">
 <div class="cart-product-title">{{cart_item.product.name}}</div>
-<div class="cart-product-price"><span class="mr-1">₵</span>{{cart_item.sub_total}}</div>
+<div class="cart-product-price"><span class="mr-1">₵</span>{{cart_item.product.price}}</div>
 <div class="option">
 <div class="option-list">
-  <div class="sku">SKU<span>:</span>
-  <div class="unit" style="display:inline">{{cart_item.product.id}}</div>
+  <div class="sku">Subtotal<span>:</span>
+  <div class="unit" style="display:inline">{{cart_item.sub_total}}</div>
   </div>
 </div>
 
@@ -51,11 +51,9 @@
   <div>Remove</div>
 </a>
 </div>
-{% if cart_item.quantity < cart_item.product.stock %}
-<input type="text" required="" pattern="^[0-9]+$" inputmode="numeric" value="{{cart_item.product.quantity}}" class="input cart-quantity"/>
-{% else %}
-<input type="text" required="" pattern="^[0-9]+$" maxlength="{{cart_item.product.stock}}" inputmode="numeric" value="{{cart_item.product.quantity}}" class="input cart-quantity"/>
-{% endif %}
+
+<input type="number" min="1" required="" pattern="^[1-9][0-9]?$|^100$" inputmode="numeric" value="8" max={{cart_item.product.stock}} class="input cart-quantity" />
+
 </div>
  {% endfor %}
  
@@ -63,7 +61,9 @@
   <div class="cart-footer w-commerce-commercecartfooter">
       <div class="cart-line-item">
           <div>Subtotal</div>
-          <div class="cart-Subtotal"><span class="mr-1">₵</span>{{total}}</div>
+    
+          <div class="cart-Subtotal">{{total}}</div>
+       
       </div>
 
           <a href="{% url 'home' %}" class="button-primary">

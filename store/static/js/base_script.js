@@ -13,8 +13,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".cart-close-button").addEventListener("click", () => {
         nav.classList.remove("nav--open");
     });
-    document.querySelector(".container-wrapper").addEventListener("click", () => {
-        nav.classList.remove("nav--open");
-    });
-
 });
